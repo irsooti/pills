@@ -1,5 +1,5 @@
 ---
-title: Material UI: select field with react-hook-form
+title: "Material UI: select field with react-hook-form"
 timestamp: 2021-01-21T09:30:04.078Z
 ---
 
