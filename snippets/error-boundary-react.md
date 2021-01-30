@@ -4,7 +4,8 @@ timestamp: 2021-01-30T16:12:27.452Z
 ---
 
 There so many ways to handle errors in React 17, I prefer to not overcomplicate this operation keeping all simple and easy to debug.
-In my latest project I was inclined to use an hibryd approach, atomicly controlling the data-flow in order to display the correct things in the right place or if the api is too much unpredictable and dirty, using an error boundary component.
+
+In my latest project I was inclined to use an hibryd approach, atomicly controlling the data-flow in order to display the correct things in the right place (even if with some data fails) or if the api is too much unpredictable and dirty, using an error boundary component.
 
 ```jsx
 import { Component, createElement } from "react";
