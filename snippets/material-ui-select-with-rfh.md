@@ -3,7 +3,7 @@ title: "Material UI: select field with react-hook-form"
 timestamp: 2021-01-21T09:30:04.078Z
 ---
 
-This is the best way I've found to handle a select field with material-ui.
+This is the way I'm using to handle a select as a field in react-hook-form with material-UI.
 
 
 ```jsx
@@ -14,7 +14,7 @@ import {
   MenuItem,
   Select,
 } from '@material-ui/core';
-import { get, kebabCase, uniqueId } from 'lodash';
+import { get, uniqueId } from 'lodash';
 import React, { useMemo } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -22,6 +22,7 @@ import { useTranslation } from 'react-i18next';
 const SelectField = ({
   name: controlName,
   label,
+  id,
   options = [],
   InputLabelProps,
   FormControlProps,
@@ -30,15 +31,11 @@ const SelectField = ({
 }) => {
   const { control, errors, register } = useFormContext();
   const { t } = useTranslation();
-  const randId = useMemo(
-    () => uniqueId(`select_${kebabCase(label + controlName)}`),
-    [controlName, label]
-  );
   const errorMessage = get(errors, `${controlName}.message`, false);
 
   return (
     <FormControl error={!!errorMessage} fullWidth {...FormControlProps}>
-      <InputLabel htmlFor={randId} id={randId} {...InputLabelProps}>
+      <InputLabel htmlFor={id} {...InputLabelProps}>
         {label}
       </InputLabel>
       <Controller
@@ -48,7 +45,7 @@ const SelectField = ({
           <Select
             labelId={name}
             name={name}
-            id={randId}
+            id={id}
             inputRef={register}
             value={value}
             fullWidth
