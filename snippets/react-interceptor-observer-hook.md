@@ -63,3 +63,4 @@ export default function App() {
 ```
 
 [Live example](https://codesandbox.io/s/competent-mayer-c9s5i?file=/src/App.js:175-774) 
+[Article on medium](https://medium.com/@swatisucharita94/react-infinite-scroll-with-intersection-observer-api-db3998e52d63)
