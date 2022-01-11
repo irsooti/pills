@@ -1,9 +1,9 @@
 ---
-title: "How to create a multibrand / multitenant component, based on environment"
+title: "How to create a multibrand / multitenant component"
 timestamp: 2022-01-11T11:08:05.295Z
 ---
 
-In this way we could render a specific component for each brand.
+In this way we could render a specific component for each brand based on environment.
 
 ```tsx
 import { ComponentElement, FC, useMemo } from 'react';
